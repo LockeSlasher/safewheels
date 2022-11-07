@@ -1,0 +1,42 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'safewheel/css/form.css'%}">
+  <link rel="shortcut icon" href="{% static 'safewheel/images/icon.png'%}" type="image/x-icon">
+  <title>Login - SafeWheels</title>
+
+</head>
+
+<body>
+
+  <div class="form form-login">
+
+    <h1 class="form-tittle">Nova senha</h1>
+
+    <form action="login.html" class="form-blank">
+
+      <p class="email-esqueci">Digite a nova senha</p>
+
+      <div class="inputs-div">
+        <label for="senha" class="label-form">Senha:</label>
+        <input type="password" class="input-blank" id="senha" required>
+      </div>
+
+      <div class="inputs-div">
+        <label for="senha" class="label-form">Confirmar senha:</label>
+        <input type="password" class="input-blank" id="senha2" required>
+      </div>
+
+      <input type="submit" value="Enviar" class="input-blank" id="input-submit">
+
+    </form>
+  </div>
+
+</body>
+
+</html>

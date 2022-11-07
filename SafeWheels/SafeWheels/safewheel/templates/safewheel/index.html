@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Home</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Estabelecimentos</h3>
+
+          <div class="card-tools">
+            <div class="input-group input-group-sm" style="width: 150px;">
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body table-responsive p-0">
+          <table class="table table-hover text-nowrap">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Estabelecimento</th>
+                <th>Proprietário</th>
+                <th>Localização</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for estabelecimentos in estabelecimentos %}
+              <tr>
+                <td>{{estabelecimentos.id}}</td>
+                <td>
+                  <a href="{%url 'detalhes' estabelecimentos.id%}" class="detail-link">{{estabelecimentos.nomeE}}</a>
+                </td>
+                <td>{{estabelecimentos.nome}}</td>
+                <td>{{estabelecimentos.local}}</td>
+                <td>
+                  {%if user.is_authenticated %}
+                  {%if user == estabelecimentos.nome%}
+                  <a href="{%url 'editar' estabelecimentos.id%}">
+                    <button class="btn btn-primary btn-sm">
+                      <ion-icon name="create-outline" class="icon"></ion-icon>
+                    </button>
+                  </a>
+
+                  <a href="{%url 'deletar' estabelecimentos.id%}">
+                    <button class="btn btn-primary btn-sm">
+                      <ion-icon name="trash-outline" class="icon"></ion-icon>
+                    </button>
+                  </a>
+                  {%else%}
+                  {%endif%}
+                  {%else%}
+                  {%endif%}
+
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+    
+      </div>
+
+    </div>
+  </div>
+ 
+
+</div>
+{% endblock content %}

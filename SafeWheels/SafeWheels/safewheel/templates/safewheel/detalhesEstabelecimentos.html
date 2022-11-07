@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+<section class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>Detalhamento <strong>{{estabelecimentos.nomeE}}</strong></h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="card card-primary">
+  <div class="card-header">
+    <h3 class="card-tittle">Detalhamento</h3>
+  </div>
+
+  <form>
+
+    <div class="card-body">
+      <div class="form-group">
+        <label for="">Nome do estabelecimento</label>
+        <input type="text" class="form-control" placeholder="{{estabelecimentos.nomeE}}" disabled>
+      </div>
+      <div class="form-group">
+        <label for="">Localização</label>
+        <input type="text" class="form-control" placeholder="{{estabelecimentos.local}}" disabled>
+      </div>
+
+
+      <div class="form-group">
+        <label for="">Horários</label>
+        <input type="text" class="form-control" placeholder="{{estabelecimentos.horario}}" disabled>
+      </div>
+
+
+      <h4>Detalhes do local</h4>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="">{%if estabelecimentos.rampa_para_acesso%} &#127383 {%endif%} Rampa para acesso </label>
+            <label style="font-weight: 500; color: grey;"></label>
+          </div>
+          <div class="form-group">
+            <label for="">{%if estabelecimentos.barras_de_apoio%} &#127383 {%endif%}Barras de apoio</label>
+            <label style="font-weight: 500; color: grey;"></label>
+          </div>
+          <div class="form-group">
+            <label for="">{%if estabelecimentos.banheiro_adapt%} &#127383 {%endif%}Banheiros adaptados</label>
+            <label style="font-weight: 500; color: grey;"></label>
+          </div>
+          <div class="form-group">
+            <label for="">{%if estabelecimentos.acess_transporte%} &#127383 {%endif%}Acessibilidade no transporte</label>
+            <label style="font-weight: 500; color: grey;"></label>
+          </div>
+          <div class="form-group">
+            <label for="">{%if estabelecimentos.acess_arquit%} &#127383 {%endif%}Acessibilidade arquitetônica</label>
+            <label style="font-weight: 500; color: grey;"></label>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="">{%if estabelecimentos.acess_comunic%} &#127383 {%endif%}Acessibilidade nas comunicações</label>
+            <label style="font-weight: 500; color: grey;"></label>
+          </div>
+          <div class="form-group">
+            <label for="">{%if estabelecimentos.acess_digital%} &#127383 {%endif%}Acessibilidade digital</label>
+            <label style="font-weight: 500; color: grey;"></label>
+          </div>
+          <div class="form-group">
+            <label for="">{%if estabelecimentos.acess_instrument%} &#127383 {%endif%}Acessibilidade instrumental</label>
+            <label style="font-weight: 500; color: grey;"></label>
+          </div>
+          <div class="form-group">
+            <label for="">{%if estabelecimentos.acess_program%} &#127383 {%endif%}Acessibilidade programática</label>
+            <label style="font-weight: 500; color: grey;"></label>
+          </div>
+          <div class="form-group">
+            <label for="">{%if estabelecimentos.acess_metod%} &#127383 {%endif%}Acessibilidade metodológica</label>
+            <label style="font-weight: 500; color: grey;"></label>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="">Mais Informações</label>
+            <textarea name="" id="" cols="30" rows="10" class="form-control" disabled>{{estabelecimentos.desc}}</textarea>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          {%if estabelecimentos.imagens%} <img src="{{estabelecimentos.imagens.url}}" alt="" style="width: 60%; margin: auto;"> {%endif%}
+        </div>
+      </div>
+      
+    </div>
+
+  </form>
+
+</div>
+
+{%endblock content%}

@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --padrao: #2660A4;
+  --azul-dois: #3e7abe;
+  --azul-branco: #779dde;
+  --cinza: #6a7c8e;
+  --cinza-claro: #f5f5f9;
+}
+
+body {
+  background-color: var(--cinza-claro);
+  font-family: 'Roboto', sans-serif;
+  color: var(--cinza);
+}
+
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  gap: .5rem;
+  font-size: 1.2rem;
+  width: 400px;
+  box-shadow: 0px 0px 10px rgba(106, 124, 142, 0.3);
+}
+
+.form-blank {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-tittle {
+  padding-bottom: .2rem;
+  color: #6a7c8e;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.second-tittle {
+  font-size: 1.2rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  font-weight: 300;
+  text-align: center;
+  border-bottom: 1px solid rgba(106, 124, 142, 0.3);
+  padding-bottom: 1rem;
+}
+
+.inputs-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-blank {
+  padding: 10px 15px;
+  font-size: 1.1rem;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid var(--cinza);
+  transition: .3s;
+  color: var(--cinza);
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #2660A4;
+  box-shadow: 0px 0px 5px var(--azul-branco);
+}
+
+.label-form {
+  margin: 1.5rem 0 .5rem 0;
+  color: var(--azul-dois);
+}
+
+#input-submit {
+  border: none;
+  cursor: pointer;
+  background-color: var(--azul-dois);
+  color: white;
+  border-radius: 5px;
+  margin-top: 2.3rem;
+  transition: .2s;
+}
+
+#input-submit:hover {
+  background-color: var(--padrao);
+}
+
+.help-links {
+  margin-top: .7rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.link-help {
+  text-decoration: none;
+  color: var(--cinza);
+  margin-top: .5rem;
+}
+
+.link-help:hover {
+  color: var(--azul-dois);
+}
+
+.email-esqueci {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.link-senha {
+  text-decoration: none;
+  color: white;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3e7abe;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+}
